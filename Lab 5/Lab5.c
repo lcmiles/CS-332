@@ -6,7 +6,7 @@
 #include <string.h>
 
 int traverseDirectory(char *base_path, const int root);
-void (*func_ptr)(int) = &traverseDirectory;
+int (*func_ptr)(char *, int) = &traverseDirectory;
 
 int main (int argc, char **argv) { 
 
@@ -38,7 +38,7 @@ int main (int argc, char **argv) {
     }
 
     if (S_ISDIR(file_stat.st_mode)) { //if the file is a directory recursively call traverseDirectory()
-        *func_ptr(path, 0);
+        (func_ptr)(path, 0);
     }
 
   closedir (parentDir); 
