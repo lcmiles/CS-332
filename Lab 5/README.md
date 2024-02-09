@@ -43,6 +43,10 @@ gcc -o Lab5 Lab5.c # this will compile Lab5 and return Lab5
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%205/Screenshot%202024-02-09%20at%2010.28.20%E2%80%AFAM.png?raw=true)
 
+# Link to GitHub Repository
+
+https://github.com/lcmiles/CS-332/tree/835047ea8d3371148b60dfed32c936995481ce79/Lab%205
+
 # References
 
 [^1] https://www.geeksforgeeks.org/function-pointer-in-c/
