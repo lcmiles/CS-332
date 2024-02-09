@@ -2,18 +2,18 @@
 
 If you're a make file
 ```bash
-make # this will compile all the files
+make # this will compile the file
 
-make run # this will run Lab5.c and print all files in its directory
+make run # this will run Lab5 executable and print all files in its directory
 
-make run d=<directory> # this will run Lab5.c and print all files in the directory given in as an argument
+make run d=<directory> # this will run Lab5 executable on the directory given as an argument
 ```
 
 If you're not using a make file
 ```bash
-gcc -o <executable name> <filename> # this will compile the filename and return an executable with the executable name
-
 gcc -o Lab5 Lab5.c # this will compile Lab5 and return Lab5
+
+./Lab5 <directory> #this will run Lab5 executable on the directory given as an argument
 ```
 
 # My Files
