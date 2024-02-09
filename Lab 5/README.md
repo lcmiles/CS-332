@@ -27,7 +27,7 @@ gcc -o Lab5 Lab5.c # this will compile Lab5 and return Lab5
     * char **argv - Character string containing command-line args
 * Returns: 0
 
-### main()
+### traverseDirectory() [^1]
 
 * Description: This function recursively traverses directories and prints them and the files contained within
 * Parameters:
@@ -37,7 +37,12 @@ gcc -o Lab5 Lab5.c # this will compile Lab5 and return Lab5
 
 # Output screenshots
 
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%205/Screenshot%202024-02-09%20at%2010.39.18%E2%80%AFAM.png?raw=true)
 
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%205/Screenshot%202024-02-09%20at%2010.38.20%E2%80%AFAM.png?raw=true)
+
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%205/Screenshot%202024-02-09%20at%2010.28.20%E2%80%AFAM.png?raw=true)
 
 # References
 
+[^1] https://www.geeksforgeeks.org/function-pointer-in-c/
