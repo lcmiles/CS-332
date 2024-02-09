@@ -21,12 +21,14 @@ int main (int argc, char **argv) {
         path = ".";
     }
 
-    if (argc < 2) { 
+    if (argc < 2) { //if there are less than two args then return error code
         printf ("Usage: %s <dirname>\n", argv[0]); 
         exit(-1);
     } 
-    parentDir = opendir (argv[1]); 
-    if (parentDir == NULL) { 
+
+    parentDir = opendir (argv[1]); //open the parent directory
+
+    if (parentDir == NULL) { //if the parent directory is null then return error code
         printf ("Error opening directory '%s'\n", argv[1]); 
         exit (-1);
     } 
@@ -43,7 +45,7 @@ int main (int argc, char **argv) {
 
   closedir (parentDir); 
   return 0; 
-} 
+}
 
 int traverseDirectory(char *base_path, const int root) {
     
@@ -76,10 +78,10 @@ int traverseDirectory(char *base_path, const int root) {
                 printf("\t");
             }
 
-            printf("%s\n", dp->d_name);
+            printf("%s\n", dp->d_name); //print file names
 
             if (S_ISDIR(file_stat.st_mode)) { //if the file is a directory recursively call traverseDirectory()
-                traverseDirectory(path, root + 1);
+                (func_ptr)(path, root + 1);
             }
         }
     }
