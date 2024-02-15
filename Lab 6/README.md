@@ -47,10 +47,14 @@ gcc -o Lab6 Lab6.c # this will compile Lab6.c and output an executable called La
 
 # Code/Output screenshots
 
-![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%204/2024-02-04%20(5).png?raw=true)
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141802.png?raw=true)
 
-![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%204/2024-02-04%20(6).png?raw=true)
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141830.png?raw=true)
+
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141741.png?raw=true)
+
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141713.png?raw=true)
 
 # Link to GitHub reopository:
 
-https://github.com/lcmiles/CS-332/tree/bb283e768625cb6445a76afc9cb999949673a522/Lab%204
+https://github.com/lcmiles/CS-332/tree/a0c6a3b41988376b6ddd691ba9133f7cb408b2d2/Lab%206
