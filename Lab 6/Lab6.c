@@ -58,6 +58,9 @@ int main(int argc, char* args[]) {
 
 	count = 0;
 	while (fgets(line, LINESIZE, file_in) != NULL) { //loop through each line in the CSV,call getfields() on it, and add the resulting struct into an array
+		if (fgets(line, LINESIZE, file_in) == "id,host_id,host_name,neighbourhood_group,neighbourhood,latitude,longitude,room_type,price,minimum_nights,number_of_reviews,calculated_host_listings_count,availability_365") {
+			continue;
+		}
 		list_items[count++] = getfields(line);
 	}
 
@@ -71,6 +74,8 @@ int main(int argc, char* args[]) {
 		printf("Error writing to listingsSortedByPrice.csv\n");
 		exit (-1);
 	}
+
+	fprintf(file_out, "id,host_id,host_name,neighbourhood_group,neighbourhood,latitude,longitude,room_type,price,minimum_nights,number_of_reviews,calculated_host_listings_count,availability_365\n");
 
 	for (i=0; i<count; i++) { //for each struct in the array
 
@@ -89,6 +94,8 @@ int main(int argc, char* args[]) {
 		printf("Error writing to listingsSortedByName.csv\n");
 		exit (-1);
 	}
+
+	fprintf(file_out, "id,host_id,host_name,neighbourhood_group,neighbourhood,latitude,longitude,room_type,price,minimum_nights,number_of_reviews,calculated_host_listings_count,availability_365\n");
 
 	for (i=0; i<count; i++) { //for each struct in the array
 
