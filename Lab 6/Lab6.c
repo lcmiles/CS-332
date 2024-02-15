@@ -31,28 +31,16 @@ struct listing getfields(char* line) {
 	return item;
 }
 
-void displayStruct(struct listing item) {
-	printf("ID : %d\n", item.id);
-	printf("Host ID : %d\n", item.host_id);
-	printf("Host Name : %s\n", item.host_name);
-	printf("Neighbourhood Group : %s\n", item.neighbourhood_group);
-	printf("Neighbourhood : %s\n", item.neighbourhood);
-	printf("Latitude : %f\n", item.latitude);
-	printf("Longitude : %f\n", item.longitude);
-	printf("Room Type : %s\n", item.room_type);
-	printf("Price : %f\n", item.price);
-	printf("Minimum Nights : %d\n", item.minimum_nights);
-	printf("Number of Reviews : %d\n", item.number_of_reviews);
-	printf("Calculated Host Listings Count : %d\n", item.calculated_host_listings_count);
-	printf("Availability_365 : %d\n\n", item.availability_365);
-}
-
 int cmpPrice(const struct listing *p1, const struct listing *p2) {
-    
-    struct listing *ps1 = (struct listing*) p1;
-    struct listing *ps2 = (struct listing*) p2;
 
     return p1->price > p2->price;
+
+}
+
+int cmpName(const struct listing *p1, const struct listing *p2) {
+
+    return strcmp(p1->host_name,p2->host_name);
+	
 }
 
 int main(int argc, char* args[]) {
@@ -75,10 +63,6 @@ int main(int argc, char* args[]) {
 
     qsort(list_items, count, sizeof(struct listing), cmpPrice);
 
-    for (i=0; i<count; i++) {
-	    displayStruct(list_items[i]);
-	}
-
 	FILE *file_out = fopen("listingsSortedByPrice.csv", "w");
 
 	for (i=0; i<count; i++) {
@@ -95,6 +79,25 @@ int main(int argc, char* args[]) {
 	}
 
 	fclose(file_out);
+
+	qsort(list_items, count, sizeof(struct listing), cmpName);
+
+	FILE *file_out2 = fopen("listingsSortedByName.csv", "w");
+
+	for (i=0; i<count; i++) {
+	    
+
+		if(file_out2 == NULL){
+			printf("Error writing to listingsSortedByName.csv\n");
+			exit (-1);
+		}
+
+		fseek(file_out2,0,SEEK_END);
+
+		fprintf(file_out2,"%d,%d,%s,%s,%s,%f,%f,%s,%f,%d,%d,%d,%d\n",list_items[i].id,list_items[i].host_id,list_items[i].host_name,list_items[i].neighbourhood_group,list_items[i].neighbourhood,list_items[i].latitude,list_items[i].longitude,list_items[i].room_type,list_items[i].price,list_items[i].minimum_nights,list_items[i].number_of_reviews,list_items[i].calculated_host_listings_count,list_items[i].availability_365);
+	}
+
+	fclose(file_out2);
 
 	return 0;
 }
