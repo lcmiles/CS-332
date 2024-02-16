@@ -30,7 +30,7 @@ gcc -o Lab6 Lab6.c # this will compile Lab6.c and output an executable called La
     * const struct listing *p2 - The second item in the structure array to be compared
 * Returns: int - result of p1->price > p2->price
 
-### cmpName()
+### cmpName() [^1]
 
 * Description: This function is called in qsort() as a function pointer as the sorting parameters used to sort by host_name
 * Parameters: 
@@ -39,7 +39,7 @@ gcc -o Lab6 Lab6.c # this will compile Lab6.c and output an executable called La
 * Returns: int - result of strcmp(p1->host_name,p2->host_name)
 
 
-### main()
+### main() [^2] [^3] [^4] [^5]
 
 * Description: Driver code responsible for performing reading input file, calling qsort(), and writing to new files
 * Parameters: None
@@ -54,6 +54,18 @@ gcc -o Lab6 Lab6.c # this will compile Lab6.c and output an executable called La
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141741.png?raw=true)
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%206/Screenshot%202024-02-15%20141713.png?raw=true)
+
+# Sources:
+
+[^1] https://www.scaler.com/topics/c/string-comparison-in-c/
+
+[^2] https://stackoverflow.com/questions/19429138/append-to-the-end-of-a-file-in-c
+
+[^3] https://discuss.codechef.com/t/sorting-structure-in-c-using-qsort/49541/3
+
+[^4] https://stackoverflow.com/questions/6105513/need-help-using-qsort-with-an-array-of-structs
+
+[^5] https://stackoverflow.com/questions/59890582/how-to-sort-an-int-array-in-c-with-native-qsort
 
 # Link to GitHub reopository:
 
