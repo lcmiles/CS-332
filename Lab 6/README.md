@@ -57,15 +57,15 @@ gcc -o Lab6 Lab6.c # this will compile Lab6.c and output an executable called La
 
 # Sources:
 
-[^1] https://www.scaler.com/topics/c/string-comparison-in-c/
+[^1]: https://www.scaler.com/topics/c/string-comparison-in-c/
 
-[^2] https://stackoverflow.com/questions/19429138/append-to-the-end-of-a-file-in-c
+[^2]: https://stackoverflow.com/questions/19429138/append-to-the-end-of-a-file-in-c
 
-[^3] https://discuss.codechef.com/t/sorting-structure-in-c-using-qsort/49541/3
+[^3]: https://discuss.codechef.com/t/sorting-structure-in-c-using-qsort/49541/3
 
-[^4] https://stackoverflow.com/questions/6105513/need-help-using-qsort-with-an-array-of-structs
+[^4]: https://stackoverflow.com/questions/6105513/need-help-using-qsort-with-an-array-of-structs
 
-[^5] https://stackoverflow.com/questions/59890582/how-to-sort-an-int-array-in-c-with-native-qsort
+[^5]: https://stackoverflow.com/questions/59890582/how-to-sort-an-int-array-in-c-with-native-qsort
 
 # Link to GitHub reopository:
 
