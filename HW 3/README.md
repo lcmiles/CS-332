@@ -78,19 +78,21 @@ make size limit L=<size limit> # this will execute lcmiles_HW03 and print all fi
 
 # Code/Output screenshots
 
-![alt text]()
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-28%20at%202.50.08%E2%80%AFPM.png?raw=true)
 
-![alt text]()
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-28%20at%202.50.58%E2%80%AFPM.png?raw=true)
 
-![alt text]()
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-28%20at%202.51.29%E2%80%AFPM.png?raw=true)
 
-![alt text]()
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-28%20at%202.56.37%E2%80%AFPM.png?raw=true)
 
-![alt text]()
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-29%20at%208.05.41%E2%80%AFAM.png?raw=true)
+
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW%203/Screenshot%202024-02-29%20at%208.07.00%E2%80%AFAM.png?raw=true)
 
 # Link to GitHub reopository:
 
-
+https://github.com/lcmiles/CS-332/tree/317fdd07c2ea709867a2e40e7b4079450337533a/HW%203
 
 # References
 
