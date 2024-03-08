@@ -1,3 +1,0 @@
-1. we do in a signal handler is to set the signal handler to ignore the same signal (the following line: signal(signo, SIG_IGN); /* ignore other SIGINT signals */). This is because, we don't want to process the same signal until we process the current signal, for example, if one enters Ctrl-C multiple times, you don't want to process the second Cntl-C while you are handling the first one.
-
-2. I showed you to check if (pid == 0), however that does not work because the child process never executes the signal handler. After fork, the child process does not inherit the signal handlers from the parent process. You can send the SIGINT signal to the child process from top and see what happens. The signal handler will never be invoked. In other words, pid will never be 0.
