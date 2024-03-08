@@ -54,4 +54,4 @@ https://github.com/lcmiles/CS-332/tree/497fc03b4de7697c1257fc12686b3478d473d65a/
 
 [^2]: https://stackoverflow.com/questions/61571675/sending-signal-to-child-process-on-pause
 
-[^3]: https://www.linuxquestions.org/questions/programming-9 how-can-you-pause-child-parent-processes-in-c-and-execute-another-function-574479/
+[^3]: https://www.linuxquestions.org/questions/programming-9how-can-you-pause-child-parent-processes-in-c-and-execute-another-function-574479/
