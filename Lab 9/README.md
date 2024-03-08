@@ -44,6 +44,9 @@ gcc -o Lab9 Lab9.c # this will compile Lab9.c and output an executable called La
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%209/Screenshot%202024-03-08%20at%2012.44.37%E2%80%AFPM.png?raw=true)
 
+# Link to GitHub reopository:
+
+https://github.com/lcmiles/CS-332/tree/497fc03b4de7697c1257fc12686b3478d473d65a/Lab%209
 
 # Sources:
 
@@ -52,7 +55,3 @@ gcc -o Lab9 Lab9.c # this will compile Lab9.c and output an executable called La
 [^2]: https://stackoverflow.com/questions/61571675/sending-signal-to-child-process-on-pause
 
 [^3]: https://www.linuxquestions.org/questions/programming-9 how-can-you-pause-child-parent-processes-in-c-and-execute-another-function-574479/
-
-# Link to GitHub reopository:
-
-https://github.com/lcmiles/CS-332/tree/497fc03b4de7697c1257fc12686b3478d473d65a/Lab%209
