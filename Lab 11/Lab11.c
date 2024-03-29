@@ -12,7 +12,7 @@ typedef struct {
 } ThreadArgs;
 
 void *compute(void *arg) {
-    ThreadArgs *args = (ThreadArgs *)arg; //case thre argument to ThreadArgs struct
+    ThreadArgs *args = (ThreadArgs *)arg; //cast the argument to ThreadArgs struct
 
     int myStart, myEnd, myN, i;
 
