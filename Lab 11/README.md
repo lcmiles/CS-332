@@ -33,7 +33,7 @@ gcc -o Lab11 Lab11.c # this will compile Lab11.c and output an executable called
 
 # Code/Output screenshots
 
-![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%2011/Screenshot%202024-03-29%20at%2012.19.02%E2%80%AFPM.png?raw=true)
+![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%2011/Screenshot%202024-03-29%20at%201.02.40%E2%80%AFPM.png?raw=true)
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/Lab%2011/Screenshot%202024-03-29%20at%2012.20.19%E2%80%AFPM.png?raw=true)
 
