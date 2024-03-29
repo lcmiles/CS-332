@@ -1,4 +1,4 @@
-FILE = lcmiles_HW03
+FILE = job_scheduler
 
 build: $(FILE).c
 	#compiles with all warnings on, debug info, and links math lib
@@ -29,9 +29,4 @@ size limit:
 	#runs and prints all files in directory less than or equal to the given size limit
 	#call: make size limit L=<size limit>
 	./$(FILE) -L $(L)
-
-linux cmd:
-	#runs and calls a linux command on the file or directory
-	#call: make linux cmd e=<linux command string>
-	./$(FILE) -e $(e)
 	
