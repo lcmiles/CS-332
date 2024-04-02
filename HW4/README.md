@@ -69,9 +69,11 @@ Returns: Nothing.
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20144549.png?raw=true)
 
-![alt text](
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20144818.png?raw=true)
 
-![alt text](
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20144834.png?raw=true)
+
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20145252.png?raw=true)
 
 # Link to GitHub reopository:
 
