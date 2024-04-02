@@ -1,4 +1,4 @@
-FILE = job_scheduler
+FILE = lcmiles_HW04
 
 build: $(FILE).c
 	#compiles with all warnings on, debug info, and links math lib
