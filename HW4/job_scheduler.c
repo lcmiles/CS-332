@@ -119,63 +119,94 @@ void submit_job(char *command) {
     }
     args[arg_count] = NULL;
 
-    // Enqueue the job index
-    int job_index = job_count++;
-    queue_insert(job_queue, job_index);
+    // Check if there are available cores
+    if (running_jobs < cores) {
+        // Enqueue the job index
+        int job_index = queue_insert(job_queue, job_count);
+        if (job_index == -1) {
+            printf("Job queue is full. Cannot add new job.\n");
+            return;
+        }
 
-    // Fork a new process
-    pid_t pid = fork();
-    if (pid == 0) { // Child process
-        // Redirect output and error streams
-        char out_file[20], err_file[20];
-        sprintf(out_file, "%d.out", job_index + 1);
-        sprintf(err_file, "%d.err", job_index + 1);
-        freopen(out_file, "w", stdout);
-        freopen(err_file, "w", stderr);
+        // Fork a new process
+        pid_t pid = fork();
+        if (pid == 0) { // Child process
+            // Redirect output and error streams
+            char out_file[20], err_file[20];
+            sprintf(out_file, "%d.out", job_count);
+            sprintf(err_file, "%d.err", job_count);
+            freopen(out_file, "w", stdout);
+            freopen(err_file, "w", stderr);
 
-        // Execute the command
-        execvp(args[0], args);
-        perror("execvp"); // This should not return
-        exit(EXIT_FAILURE);
-    } else if (pid > 0) { // Parent process
+            // Execute the command
+            execvp(args[0], args);
+            perror("execvp"); // This should not return
+            exit(EXIT_FAILURE);
+        } else if (pid > 0) { // Parent process
+            // Update job information
+            jobs[job_count].jobid = job_count + 1;
+            strcpy(jobs[job_count].command, args[0]);
+            jobs[job_count].status = RUNNING;
+            running_jobs++;
+
+            printf("job %d added to the queue\n", job_count + 1);
+        } else { // Fork failed
+            perror("fork");
+        }
+    } else {
+        printf("No available cores. Job %s is waiting.\n", args[0]);
         // Update job information
-        jobs[job_index].jobid = job_index + 1;
-        strcpy(jobs[job_index].command, args[0]);
-        jobs[job_index].status = RUNNING;
-        running_jobs++;
-
-        printf("job %d added to the queue\n", job_index + 1);
-    } else { // Fork failed
-        perror("fork");
+        int job_index = queue_insert(job_queue, job_count);
+        if (job_index != -1) {
+            jobs[job_count].jobid = job_count + 1;
+            strcpy(jobs[job_count].command, args[0]);
+            jobs[job_count].status = WAITING;
+        } else {
+            printf("Job queue is full. Cannot add new job.\n");
+        }
     }
+
+    job_count++;
 }
 
 void show_jobs() {
+    // Check if there are any running jobs
+    if (running_jobs == 0) {
+        printf("No jobs running\n");
+        return;
+    }
+
     printf("jobid command status\n");
 
     int queue_index = job_queue->start;
     for (int i = 0; i < job_queue->count; i++) {
         int job_index = job_queue->buffer[queue_index];
         Job *job = &jobs[job_index];
-        
-        // Check the status of the job
-        int status;
-        pid_t result = waitpid(-1, &status, WNOHANG);
-        if (result == -1) {
-            perror("waitpid");
-            exit(EXIT_FAILURE);
-        } else if (result == 0) {
-            // Process is still running
-            printf("%d %s %s\n", job->jobid, job->command, (i < cores) ? "Running" : "Waiting");
+
+        // Check if the job is still running
+        if (job->status == RUNNING) {
+            int status;
+            pid_t result = waitpid(-1, &status, WNOHANG);
+            if (result == -1) {
+                perror("waitpid");
+                exit(EXIT_FAILURE);
+            } else if (result == 0) {
+                // Process is still running
+                printf("%d %s Running\n", job->jobid, job->command);
+            } else {
+                // Process has terminated
+                job->status = COMPLETED;
+                printf("%d %s Completed\n", job->jobid, job->command);
+            }
         } else {
-            // Process has terminated
-            job->status = COMPLETED;
-            printf("%d %s Completed\n", job->jobid, job->command);
+            // Job is waiting
+            printf("%d %s Waiting\n", job->jobid, job->command);
         }
         
         queue_index = (queue_index + 1) % job_queue->size;
     }
 }
+
 
 
 
