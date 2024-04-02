@@ -67,6 +67,12 @@ Returns: Nothing.
 
 ![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20142354.png?raw=true)
 
+![alt text](https://github.com/lcmiles/CS-332/blob/main/HW4/Screenshot%202024-04-02%20144549.png?raw=true)
+
+![alt text](
+
+![alt text](
+
 # Link to GitHub reopository:
 
 https://github.com/lcmiles/CS-332/tree/e2fb900e812c9e0a168ff8dc15ae630ffd16a9b1/HW4
