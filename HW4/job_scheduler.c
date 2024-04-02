@@ -170,13 +170,11 @@ void submit_job(char *command) {
 }
 
 void show_jobs() {
-    // Check if there are any running jobs
+    printf("jobid     command                                 status\n");
+
     if (running_jobs == 0) {
-        printf("No jobs running\n");
         return;
     }
-
-    printf("jobid command status\n");
 
     int queue_index = job_queue->start;
     for (int i = 0; i < job_queue->count; i++) {
@@ -192,20 +190,23 @@ void show_jobs() {
                 exit(EXIT_FAILURE);
             } else if (result == 0) {
                 // Process is still running
-                printf("%d %s Running\n", job->jobid, job->command);
+                printf("%d        %s Running\n", job->jobid, job->command);
             } else {
                 // Process has terminated
                 job->status = COMPLETED;
-                printf("%d %s Completed\n", job->jobid, job->command);
+                running_jobs--; // Decrement running_jobs counter
+                printf("%d        %s Completed\n", job->jobid, job->command);
             }
-        } else {
+        } else if (job->status == WAITING) {
             // Job is waiting
-            printf("%d %s Waiting\n", job->jobid, job->command);
+            printf("%d        %s Waiting\n", job->jobid, job->command);
         }
         
         queue_index = (queue_index + 1) % job_queue->size;
     }
 }
+
+
 
 
 
